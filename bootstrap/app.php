@@ -13,6 +13,11 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         //
     })
-    ->withExceptions(function (Exceptions $exceptions): void {
-        //
-    })->create();
+->withExceptions(function (Exceptions $exceptions): void {
+    //
+})
+->withProviders([
+    App\Providers\AppServiceProvider::class,
+    App\Providers\AuthServiceProvider::class,
+])
+->create();

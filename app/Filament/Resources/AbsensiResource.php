@@ -106,4 +106,8 @@ class AbsensiResource extends Resource
             // 'edit' => Pages\EditAbsensi::route('/{record}/edit'),
         ];
     }
+    public static function canViewAny(): bool
+{
+    return auth()->user()->hasRole('admin');
+}
 }
